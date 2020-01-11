@@ -1,6 +1,8 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchPosts } from "../actions/index";
 const PostList = () => {
+  useEffect(() => {}, []);
   return (
     <div>
       <h1>Post List</h1>
@@ -8,4 +10,4 @@ const PostList = () => {
   );
 };
 
-export default PostList;
+export default connect(null, { fetchPosts })(PostList);
