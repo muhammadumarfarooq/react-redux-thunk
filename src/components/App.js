@@ -1,10 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PostList from "./PostList";
 
 const App = () => {
   return (
     <div>
-      <h1>App...</h1>
+      <PostList />
     </div>
   );
 };
