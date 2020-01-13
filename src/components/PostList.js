@@ -6,6 +6,7 @@ const PostList = props => {
     props.fetchPosts();
     // eslint-disable-next-line
   }, []);
+
   return (
     <div>
       <h1>Post List</h1>

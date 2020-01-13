@@ -3,8 +3,8 @@ import jsonplaceholder from "../apis/jsonPlaceholder";
 // http://jsonplaceholder.typicode.com/posts
 // http://jsonplaceholder.typicode.com/users
 
-export const fetchPosts = () => dispatch => {
-  const response = jsonplaceholder.get("/posts");
+export const fetchPosts = () => async dispatch => {
+  const response = await jsonplaceholder.get("/posts");
 
   dispatch({
     type: "FETCH_POSTS",
