@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { ListGroup } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/index";
 const PostList = props => {
@@ -7,11 +8,23 @@ const PostList = props => {
     // eslint-disable-next-line
   }, []);
 
+  console.log(props.posts);
   return (
-    <div>
-      <h1>Post List</h1>
-    </div>
+    <ListGroup>
+      {props.posts.map(post => (
+        <ListGroup.Item key={post.id}>
+          <h5>{post.title}</h5>
+          <p>{post.body}</p>
+        </ListGroup.Item>
+      ))}
+    </ListGroup>
   );
 };
 
-export default connect(null, { fetchPosts })(PostList);
+const mapStateToProps = state => {
+  return {
+    posts: state.posts
+  };
+};
+
+export default connect(mapStateToProps, { fetchPosts })(PostList);
