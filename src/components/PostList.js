@@ -11,7 +11,6 @@ const PostList = props => {
     // eslint-disable-next-line
   }, []);
 
-  console.log(props.posts);
   return (
     <ListGroup>
       {props.posts.map(post => (
