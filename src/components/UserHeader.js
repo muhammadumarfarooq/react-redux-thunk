@@ -2,21 +2,20 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchUser } from "../actions";
 
-const UserHeader = ({ userId, fetchUser, users }) => {
+const UserHeader = ({ userId, fetchUser, user }) => {
   useEffect(() => {
     fetchUser(userId);
     //eslint-disable-next-line
   }, []);
 
-  const user = users.find(user => user.id === userId);
   if (!user) return null;
 
   return <h6>{user.name}</h6>;
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    users: state.users
+    user: state.users.find(user => user.id === ownProps.userId)
   };
 };
 
