@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { ListGroup } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/index";
+
+import UserHeader from "./UserHeader";
+
 const PostList = props => {
   useEffect(() => {
     props.fetchPosts();
@@ -15,6 +18,7 @@ const PostList = props => {
         <ListGroup.Item key={post.id}>
           <h5>{post.title}</h5>
           <p>{post.body}</p>
+          <UserHeader userId={post.userId} />
         </ListGroup.Item>
       ))}
     </ListGroup>
