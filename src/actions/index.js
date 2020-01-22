@@ -19,7 +19,7 @@ export const fetchPosts = () => async dispatch => {
 //   });
 // };
 
-export const fetchUser = function(userId) {
+export const fetchUser = _.memoize(function(userId) {
   return async function(dispatch) {
     const response = await jsonplaceholder.get(`/users/${userId}`);
 
@@ -28,4 +28,4 @@ export const fetchUser = function(userId) {
       payload: response.data
     });
   };
-};
+});
