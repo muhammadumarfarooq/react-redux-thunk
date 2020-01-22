@@ -8,6 +8,8 @@ const UserHeader = ({ userId, fetchUser, user }) => {
     //eslint-disable-next-line
   }, []);
 
+  console.log(user);
+
   if (!user) return null;
 
   return <h6>{user.name}</h6>;

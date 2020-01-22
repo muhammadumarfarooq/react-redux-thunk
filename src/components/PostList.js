@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchPosts } from "../actions/index";
 
 import UserHeader from "./UserHeader";
+// import { Link } from "react-router-dom";
 
 const PostList = props => {
   useEffect(() => {
@@ -18,6 +19,7 @@ const PostList = props => {
           <h5>{post.title}</h5>
           <p>{post.body}</p>
           <UserHeader userId={post.userId} />
+          <a href={`/post/${post.id}`}>More</a>
         </ListGroup.Item>
       ))}
     </ListGroup>
