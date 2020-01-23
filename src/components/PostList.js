@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import { ListGroup } from "react-bootstrap";
 import { connect } from "react-redux";
-import { fetchPosts } from "../actions/index";
+import { fetchPostsAndUsers } from "../actions/index";
 
 import UserHeader from "./UserHeader";
-// import { Link } from "react-router-dom";
 
 const PostList = props => {
   useEffect(() => {
-    props.fetchPosts();
+    props.fetchPostsAndUsers();
     // eslint-disable-next-line
   }, []);
 
@@ -32,4 +31,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchPosts })(PostList);
+export default connect(mapStateToProps, { fetchPostsAndUsers })(PostList);
